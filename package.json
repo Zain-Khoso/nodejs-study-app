@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-study-app",
+  "version": "0.0.0",
+  "description": "Backend for PrepPlus - A study app with over a 100K questions.",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "nodejs",
+    "express",
+    "study-app",
+    "prepplus"
+  ],
+  "author": "Zain Khoso",
+  "repository": {
+    "url": "https://github.com/Zain-Khoso/nodejs-study-app.git"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@10.26.2"
+}
