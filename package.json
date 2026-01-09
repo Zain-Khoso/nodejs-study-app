@@ -15,5 +15,8 @@
     "url": "https://github.com/Zain-Khoso/nodejs-study-app.git"
   },
   "license": "MIT",
-  "packageManager": "pnpm@10.26.2"
+  "packageManager": "pnpm@10.27.0",
+  "devDependencies": {
+    "prettier": "^3.7.4"
+  }
 }
