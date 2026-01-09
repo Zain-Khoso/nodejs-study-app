@@ -2,8 +2,12 @@
   "name": "nodejs-study-app",
   "version": "0.0.0",
   "description": "Backend for PrepPlus - A study app with over a 100K questions.",
-  "main": "index.js",
-  "scripts": {},
+  "main": "src/app.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "nodemon src/app.ts"
+  },
   "keywords": [
     "nodejs",
     "express",
@@ -17,6 +21,15 @@
   "license": "MIT",
   "packageManager": "pnpm@10.27.0",
   "devDependencies": {
-    "prettier": "^3.7.4"
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.3",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.7.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
   }
 }
