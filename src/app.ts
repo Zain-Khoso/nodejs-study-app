@@ -6,6 +6,7 @@ import cors from 'cors';
 // Local Imports.
 import { env } from './utils/config';
 import { auth } from './utils/auth';
+import { session } from './utils/session.middleware';
 
 // Express Server Definition.
 const app = express();
@@ -22,6 +23,7 @@ app.use(
   })
 );
 app.use(express.json());
+app.use(session);
 
 // Running the server.
 app.listen(env.PORT);
