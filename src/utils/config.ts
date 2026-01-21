@@ -1,6 +1,9 @@
 // Reads environment variables.
 import 'dotenv/config';
 
+// Lib Imports.
+import mongoose from 'mongoose';
+
 // Type definition for environment variables.
 type EnvironmentVariables = {
   NODE_ENV: string;
@@ -17,4 +20,6 @@ const env: EnvironmentVariables = {
   MONGO_DB: process.env.MONGO_DB || 'preplus',
 };
 
-export { env };
+const database = await mongoose.connect(env.MONGO_URI, { dbName: env.MONGO_DB });
+
+export { env, database };
