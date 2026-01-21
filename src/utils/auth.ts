@@ -7,5 +7,7 @@ import { database } from './config';
 
 // Better Auth configuration.
 export const auth = betterAuth({
-  database: mongodbAdapter(database.connection.db!),
+  database: mongodbAdapter(database.connection.db!, {
+    client: database.connection.getClient(),
+  }),
 });
