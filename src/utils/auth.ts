@@ -10,4 +10,7 @@ export const auth = betterAuth({
   database: mongodbAdapter(database.connection.db!, {
     client: database.connection.getClient(),
   }),
+  experimental: {
+    joins: true,
+  },
 });
