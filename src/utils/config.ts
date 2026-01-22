@@ -11,6 +11,13 @@ type EnvironmentVariables = {
   FRONTEND_ORIGIN: string;
   MONGO_URI: string;
   MONGO_DB: string;
+
+  // Auth.
+  BETTER_AUTH_SECRET: string;
+  BETTER_AUTH_URL: string;
+
+  GOOGLE_CLIENT_ID: string;
+  GOOGLE_CLIENT_SECRET: string;
 };
 
 // Type-safe access to environment variables.
@@ -20,6 +27,13 @@ const env: EnvironmentVariables = {
   FRONTEND_ORIGIN: process.env.FRONTEND_ORIGIN || 'http://locahost:3000',
   MONGO_URI: process.env.MONGO_URI || 'mongodb://127.0.0.1:27017',
   MONGO_DB: process.env.MONGO_DB || 'preplus',
+
+  // Auth.
+  BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET!,
+  BETTER_AUTH_URL: process.env.BETTER_AUTH_URL!,
+
+  GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID!,
+  GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET!,
 };
 
 const database = await mongoose.connect(env.MONGO_URI, { dbName: env.MONGO_DB });
