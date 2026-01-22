@@ -11,10 +11,7 @@ import { session } from './utils/session.middleware';
 // Express Server Definition.
 const app = express();
 
-// Authentication.
-app.all('/api/auth/*splat', toNodeHandler(auth));
-
-// Middlewares.
+// CORS Policy.
 app.use(
   cors({
     origin: env.FRONTEND_ORIGIN,
@@ -22,6 +19,11 @@ app.use(
     credentials: true,
   })
 );
+
+// Better-Auth handler.
+app.all('/api/auth/*splat', toNodeHandler(auth));
+
+// Middlewares.
 app.use(express.json());
 app.use(session);
 
