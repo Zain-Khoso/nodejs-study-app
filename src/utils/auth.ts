@@ -10,6 +10,7 @@ export const auth = betterAuth({
   baseURL: env.BETTER_AUTH_URL,
   database: mongodbAdapter(database.connection.db!, {
     client: database.connection.getClient(),
+    usePlural: true,
   }),
   trustedOrigins: [env.FRONTEND_ORIGIN],
   socialProviders: {
