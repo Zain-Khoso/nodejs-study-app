@@ -20,6 +20,10 @@ export const auth = betterAuth({
       accessType: 'offline',
       prompt: 'select_account consent',
     },
+    discord: {
+      clientId: env.DISCORD_CLIENT_ID,
+      clientSecret: env.DISCORD_CLIENT_SECRET,
+    },
   },
   experimental: {
     joins: true,

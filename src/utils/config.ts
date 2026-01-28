@@ -18,6 +18,9 @@ type EnvironmentVariables = {
 
   GOOGLE_CLIENT_ID: string;
   GOOGLE_CLIENT_SECRET: string;
+
+  DISCORD_CLIENT_ID: string;
+  DISCORD_CLIENT_SECRET: string;
 };
 
 // Type-safe access to environment variables.
@@ -34,6 +37,9 @@ const env: EnvironmentVariables = {
 
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID!,
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET!,
+
+  DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID!,
+  DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET!,
 };
 
 const database = await mongoose.connect(env.MONGO_URI, { dbName: env.MONGO_DB });
