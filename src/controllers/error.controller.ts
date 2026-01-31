@@ -9,11 +9,8 @@ import { serializeResponse } from '../utils/serializers';
 async function serverError(error: any, req: Request, res: Response, next: NextFunction) {
   console.log('\n');
   centeredLog(' Error ');
-  console.log('\n');
   console.log(error);
-  console.log('\n');
-  centeredLog('');
-  console.log('\n');
+  console.log(''.padEnd(120, '-'));
 
   return res.status(500).json(serializeResponse({}, { message: 'Something went wrong.' }));
 }
@@ -21,8 +18,7 @@ async function serverError(error: any, req: Request, res: Response, next: NextFu
 // Controller to handle 404 reqs.
 async function routeNotFoundError(req: Request, res: Response, next: NextFunction) {
   console.log('\n');
-  centeredLog(` Page not Found: ${req.protocol}${req.get('host')}${req.originalUrl} `);
-  console.log('\n');
+  centeredLog(` Page not Found: ${req.protocol}://${req.get('host')}${req.originalUrl} `);
 
   return res.status(404).json(serializeResponse({}, { message: 'Route not found.' }));
 }
