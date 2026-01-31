@@ -12,7 +12,25 @@ export const auth = betterAuth({
     client: database.connection.getClient(),
     usePlural: true,
   }),
-  trustedOrigins: [env.FRONTEND_ORIGIN],
+  user: {
+    additionalFields: {
+      headline: {
+        type: 'string',
+        required: true,
+        defaultValue: 'Hi there! I am new.',
+      },
+      currentStreak: {
+        type: 'number',
+        required: true,
+        defaultValue: 0,
+      },
+      longestStreak: {
+        type: 'number',
+        required: true,
+        defaultValue: 0,
+      },
+    },
+  },
   socialProviders: {
     google: {
       clientId: env.GOOGLE_CLIENT_ID,
@@ -33,6 +51,7 @@ export const auth = betterAuth({
       clientSecret: env.TWITTER_CLIENT_SECRET,
     },
   },
+  trustedOrigins: [env.FRONTEND_ORIGIN],
   experimental: {
     joins: true,
   },
