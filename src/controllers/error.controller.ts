@@ -18,5 +18,14 @@ async function serverError(error: any, req: Request, res: Response, next: NextFu
   return res.status(500).json(serializeResponse({}, { message: 'Something went wrong.' }));
 }
 
+// Controller to handle 404 reqs.
+async function routeNotFoundError(req: Request, res: Response, next: NextFunction) {
+  console.log('\n');
+  centeredLog(` Page not Found: ${req.protocol}${req.get('host')}${req.originalUrl} `);
+  console.log('\n');
+
+  return res.status(404).json(serializeResponse({}, { message: 'Route not found.' }));
+}
+
 // Exports.
-export default { serverError };
+export default { serverError, routeNotFoundError };

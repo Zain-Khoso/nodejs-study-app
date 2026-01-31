@@ -12,7 +12,7 @@ const router = Router();
 router.use('/dashboard', DashboardRouter);
 
 // Error Handlers.
-router.use(errorController.serverError);
+router.use(errorController.routeNotFoundError, errorController.serverError);
 
 // Exports.
 export default router;
