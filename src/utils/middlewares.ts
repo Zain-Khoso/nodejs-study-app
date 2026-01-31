@@ -6,7 +6,7 @@ import { fromNodeHeaders } from 'better-auth/node';
 import { auth } from './auth';
 
 // This middleware is used to retrieve and attach the current session to the request object.
-async function session(req: Request, res: Response, next: NextFunction) {
+async function session(req: Request, _: Response, next: NextFunction) {
   const session = await auth.api.getSession({ headers: fromNodeHeaders(req.headers) });
 
   if (session) {
