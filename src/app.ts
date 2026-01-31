@@ -7,6 +7,7 @@ import cors from 'cors';
 import { env } from './utils/config';
 import { auth } from './utils/auth';
 import { session } from './utils/session.middleware';
+import APIRouter from './routes/index';
 
 // Express Server Definition.
 const app = express();
@@ -26,6 +27,9 @@ app.all('/api/auth/*splat', toNodeHandler(auth));
 // Middlewares.
 app.use(express.json());
 app.use(session);
+
+// Router.
+app.use('/api', APIRouter);
 
 // Running the server.
 app.listen(env.PORT);
