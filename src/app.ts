@@ -6,7 +6,7 @@ import cors from 'cors';
 // Local Imports.
 import { env } from './utils/config';
 import { auth } from './utils/auth';
-import { session } from './utils/session.middleware';
+import { session } from './utils/middlewares';
 import APIRouter from './routes/index';
 
 // Express Server Definition.
