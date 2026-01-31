@@ -6,7 +6,7 @@ import { centeredLog } from '../utils/helper';
 import { serializeResponse } from '../utils/serializers';
 
 // Controller to handle any kind of server error.
-async function serverError(error: any, req: Request, res: Response, next: NextFunction) {
+async function serverError(error: any, _: Request, res: Response, __: NextFunction) {
   console.log('\n');
   centeredLog(' Error ');
   console.log(error);
@@ -16,7 +16,7 @@ async function serverError(error: any, req: Request, res: Response, next: NextFu
 }
 
 // Controller to handle 404 reqs.
-async function routeNotFoundError(req: Request, res: Response, next: NextFunction) {
+async function routeNotFoundError(req: Request, res: Response, _: NextFunction) {
   console.log('\n');
   centeredLog(` Page not Found: ${req.protocol}://${req.get('host')}${req.originalUrl} `);
 
